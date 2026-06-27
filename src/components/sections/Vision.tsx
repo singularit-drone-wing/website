@@ -1,5 +1,5 @@
 // ============================================================
-// Vision — SingularIT's vision statement
+// Vision — SINGULARIT's vision statement
 // Cyberpunk HUD layout with monospace text and sharp lines.
 // ============================================================
 

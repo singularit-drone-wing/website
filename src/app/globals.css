@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ============================================================
-   SingularIT — Cyberpunk / Glitch Design System
+   SINGULARIT — Cyberpunk / Glitch Design System
    High-Tech, Low-Life. Deep black void with electric blue neon.
    ============================================================ */
 
@@ -90,7 +90,7 @@
 
   --radius: 0px;
 
-  /* Custom SingularIT Cyber tokens */
+  /* Custom SINGULARIT Cyber tokens */
   --sit-bg-primary: #030307;
   --sit-bg-secondary: #070712;
   --sit-bg-tertiary: #0a0a14;

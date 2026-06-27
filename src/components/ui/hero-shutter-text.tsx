@@ -1,6 +1,6 @@
 // ============================================================
 // HeroShutterText — Cinematic shutter-slice text reveal
-// Adapted for SingularIT's black & blue aesthetic.
+// Adapted for SINGULARIT's black & blue aesthetic.
 // Each character enters with a 3-layer shutter sweep (top,
 // middle, bottom slices) before the main letter settles.
 //

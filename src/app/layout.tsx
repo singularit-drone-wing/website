@@ -1,5 +1,5 @@
 // ============================================================
-// Root Layout — Global wrapper for the SingularIT website
+// Root Layout — Global wrapper for the SINGULARIT website
 // Loads fonts, metadata, BackgroundSystem, and Navbar.
 // ============================================================
 
@@ -29,11 +29,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SingularIT — Engineering the Autonomous Future | CUSAT",
+  title: "SINGULARIT — Engineering the Autonomous Future | CUSAT",
   description:
-    "SingularIT is CUSAT's premier autonomous systems and robotics team — pushing the boundaries of innovation, engineering, and artificial intelligence.",
+    "SINGULARIT is CUSAT's premier autonomous systems and robotics team — pushing the boundaries of innovation, engineering, and artificial intelligence.",
   keywords: [
-    "SingularIT",
+    "SINGULARIT",
     "CUSAT",
     "robotics",
     "autonomous systems",
@@ -42,14 +42,14 @@ export const metadata: Metadata = {
     "artificial intelligence",
     "Kerala",
   ],
-  authors: [{ name: "SingularIT Team" }],
+  authors: [{ name: "SINGULARIT Team" }],
   openGraph: {
-    title: "SingularIT — Engineering the Autonomous Future",
+    title: "SINGULARIT — Engineering the Autonomous Future",
     description:
       "CUSAT's premier autonomous systems and robotics team.",
     type: "website",
     locale: "en_IN",
-    siteName: "SingularIT",
+    siteName: "SINGULARIT",
   },
 };
 

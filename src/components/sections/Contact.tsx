@@ -38,7 +38,7 @@ export default function Contact() {
           </h2>
           <p className="mt-6 max-w-xl text-base md:text-lg text-[var(--sit-text-muted)] font-mono leading-relaxed">
             <span className="text-[var(--sit-blue)] mr-2">&gt;</span>
-            Interested in collaborating, sponsoring, or joining SingularIT? We&apos;d love to hear from you.
+            Interested in collaborating, sponsoring, or joining SINGULARIT? We&apos;d love to hear from you.
           </p>
           <div className="mt-8 h-1 w-24 bg-[var(--sit-blue)] cyber-border-glow" />
         </motion.div>

@@ -1,5 +1,5 @@
 // ============================================================
-// About — Who is SingularIT?
+// About — Who is SINGULARIT?
 // Cyberpunk layout with chamfered cards and glowing borders.
 // ============================================================
 

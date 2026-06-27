@@ -1,5 +1,5 @@
 // ============================================================
-// SingularIT — Team Members Data
+// SINGULARIT — Team Members Data
 // Placeholder data — replace with actual member details.
 // ============================================================
 

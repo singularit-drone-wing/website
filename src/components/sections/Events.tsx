@@ -14,7 +14,7 @@ export default function Events() {
     <SectionWrapper
       id="events"
       title="Past Events"
-      subtitle="Competitions, workshops, and symposiums organized and participated in by SingularIT."
+      subtitle="Competitions, workshops, and symposiums organized and participated in by SINGULARIT."
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
         {events.map((event, i) => (

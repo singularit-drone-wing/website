@@ -1,5 +1,5 @@
 // ============================================================
-// SingularIT — TypeScript Type Definitions
+// SINGULARIT — TypeScript Type Definitions
 // Central type definitions for the entire application.
 // ============================================================
 

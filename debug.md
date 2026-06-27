@@ -1,7 +1,7 @@
-# SingularIT Website — Debug Documentation
+# SINGULARIT Website — Debug Documentation
 
 ## Project Overview
-Official website for **SingularIT, CUSAT** — a cinematic, premium, engineering-focused single-page experience with a separate Gallery page. Built with Next.js 16 (App Router), TypeScript, Tailwind CSS v4, shadcn/ui, Framer Motion, and Lucide React.
+Official website for **SINGULARIT, CUSAT** — a cinematic, premium, engineering-focused single-page experience with a separate Gallery page. Built with Next.js 16 (App Router), TypeScript, Tailwind CSS v4, shadcn/ui, Framer Motion, and Lucide React.
 
 ## Tech Stack
 | Technology | Version | Purpose |
@@ -34,7 +34,7 @@ src/
 │   │   └── SectionWrapper.tsx ← Reusable section container
 │   ├── sections/
 │   │   ├── Hero.tsx         ← Cinematic hero (shutter text + scroll zoom)
-│   │   ├── About.tsx        ← Who is SingularIT + stats
+│   │   ├── About.tsx        ← Who is SINGULARIT + stats
 │   │   ├── Mission.tsx      ← Pull-quote mission statement
 │   │   ├── Vision.tsx       ← Right-aligned vision statement
 │   │   ├── Experiences.tsx  ← Timeline of achievements

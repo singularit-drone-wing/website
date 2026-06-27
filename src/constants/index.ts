@@ -1,5 +1,5 @@
 // ============================================================
-// SingularIT — Design Tokens & Animation Constants
+// SINGULARIT — Design Tokens & Animation Constants
 // Centralized constants for consistent design and animation.
 // ============================================================
 

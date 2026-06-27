@@ -63,7 +63,7 @@ export function Hero() {
         >
           <div className="flex items-center justify-center gap-4 text-[10px] sm:text-xs font-label uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[var(--sit-blue)] opacity-80">
             <span className="hidden sm:block h-px flex-1 max-w-[4rem] bg-gradient-to-r from-transparent to-[var(--sit-blue)]" />
-            <span className="flex items-center gap-2 whitespace-nowrap"><span className="animate-pulse">●</span> CUSAT // STUDENT INNOVATION CLUB</span>
+            <span className="flex items-center gap-2 whitespace-nowrap"><span className="animate-pulse"></span> STUDENT INNOVATION CLUB</span>
             <span className="hidden sm:block h-px flex-1 max-w-[4rem] bg-gradient-to-l from-transparent to-[var(--sit-blue)]" />
           </div>
         </motion.div>
@@ -162,8 +162,6 @@ export function Hero() {
           style={{ opacity: mounted ? indicatorOpacity : 1 }}
           className="absolute bottom-[22vh] left-1/2 w-full max-w-lg -translate-x-1/2 px-6 text-center text-xs md:text-sm text-[var(--sit-text-muted)] font-mono leading-relaxed"
         >
-          &gt; Pioneering cutting-edge autonomous aerial systems.<br />
-          &gt; Initializing student-led innovation protocols at CUSAT<span className="cyber-cursor"></span>
         </motion.p>
 
         {/* Scroll indicator */}

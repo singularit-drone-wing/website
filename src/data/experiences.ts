@@ -1,5 +1,5 @@
 // ============================================================
-// SingularIT — Experiences Data
+// SINGULARIT — Experiences Data
 // Placeholder data — replace with actual achievements.
 // ============================================================
 

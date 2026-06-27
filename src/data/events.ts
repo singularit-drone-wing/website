@@ -1,5 +1,5 @@
 // ============================================================
-// SingularIT — Events Data
+// SINGULARIT — Events Data
 // Placeholder data — replace with actual past events.
 // ============================================================
 
@@ -11,7 +11,7 @@ export const events: Event[] = [
     title: "RoboWars 2024",
     date: "March 2024",
     description:
-      "An intercollegiate combat robotics competition featuring 30-kg battle bots designed and built by SingularIT members.",
+      "An intercollegiate combat robotics competition featuring 30-kg battle bots designed and built by SINGULARIT members.",
     image: "/images/events/placeholder.svg",
   },
   {

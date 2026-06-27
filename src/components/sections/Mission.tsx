@@ -1,5 +1,5 @@
 // ============================================================
-// Mission — SingularIT's mission statement
+// Mission — SINGULARIT's mission statement
 // Cyberpunk layout with terminal prompts and chamfered focus cards.
 // ============================================================
 

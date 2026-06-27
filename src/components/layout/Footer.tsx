@@ -60,7 +60,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="text-center md:text-left flex flex-col gap-2">
             <p className="text-2xl font-heading font-black tracking-widest text-white uppercase cyber-glitch">
-              SingularIT
+              SINGULARIT
             </p>
             <p className="text-xs font-label uppercase tracking-[0.2em] text-[var(--sit-text-muted)]">
               {siteConfig.tagline}
@@ -94,7 +94,7 @@ export default function Footer() {
           </p>
           
           <p className="text-[10px] font-mono tracking-widest text-[var(--sit-text-muted)] uppercase">
-            © {new Date().getFullYear()} SingularIT, CUSAT.
+            © {new Date().getFullYear()} SINGULARIT, CUSAT.
           </p>
         </div>
       </div>

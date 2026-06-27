@@ -1,23 +1,23 @@
 // ============================================================
-// SingularIT — Site Configuration
+// SINGULARIT — Site Configuration
 // Central metadata, social links, and copy for the site.
 // ============================================================
 
 export const siteConfig = {
-  name: "SingularIT",
+  name: "SINGULARIT",
   tagline: "Pioneering Autonomous Aerial Systems",
   description:
-    "SingularIT is a student-led innovation club at Cochin University of Science and Technology, pioneering cutting-edge technology in autonomous systems.",
-  url: "https://singularit.in",
+    "SINGULARIT is a student-led innovation club at Cochin University of Science and Technology, pioneering cutting-edge technology in autonomous systems.",
+  url: "https://teamsingularit.com",
 
   about: {
-    headline: "About SingularIT",
-    intro: `SingularIT is a student-led innovation club at Cochin University of Science and Technology, pioneering cutting-edge technology in autonomous systems. We bring together passionate engineers and innovators from diverse disciplines to solve real-world problems through technology.`,
+    headline: "About SINGULARIT",
+    intro: `SINGULARIT is a student-led innovation club at Cochin University of Science and Technology, pioneering cutting-edge technology in autonomous systems. We bring together passionate engineers and innovators from diverse disciplines to solve real-world problems through technology.`,
     foundation: `Founded on the belief that great innovation comes from hands-on learning, we transform theoretical knowledge into groundbreaking applications.`,
     focus: `Our current focus is on Unmanned Aerial Systems (UAS), a journey that began with mission-focused autonomous systems at SUAS 2025 and has since evolved into high-speed autonomous racing — allowing us to expand our expertise from precision operations to agile, real-time autonomous flight while advancing our broader mission of transforming how students approach technology and innovation.`,
     differentiator: {
       question: "What makes us different?",
-      answer: `We are not just a competition team. We are a platform for aspiring engineers to innovate, learn and grow into industry leaders. Whether you are confident in your abilities or still discovering your path, SingularIT empowers you to become a capable professional in your field.`,
+      answer: `We are not just a competition team. We are a platform for aspiring engineers to innovate, learn and grow into industry leaders. Whether you are confident in your abilities or still discovering your path, SINGULARIT empowers you to become a capable professional in your field`,
     },
   },
 
@@ -44,7 +44,7 @@ export const siteConfig = {
 
   vision: {
     headline: "Our Vision",
-    statement: `Our vision extends far beyond a single competition. We see SingularIT as:`,
+    statement: `Our vision extends far beyond a single competition. We see SINGULARIT as:`,
     pillars: [
       {
         title: "A catalyst for innovation",
@@ -77,7 +77,7 @@ export const siteConfig = {
     suas: {
       title: "AUVSI SUAS 2025 — International Competition",
       location: "St. Mary's County Regional Airport, Maryland, USA",
-      achievement: `Team SingularIT made history as CUSAT's first autonomous drone flight on a global stage and as Kerala's first and only public sector institution to qualify for this prestigious international competition.`,
+      achievement: `Team SINGULARIT made history as CUSAT's first autonomous drone flight on a global stage and as Kerala's first and only public sector institution to qualify for this prestigious international competition.`,
       results: [
         "Global Mission Ranking: #25 among top international university teams",
         "Successfully designed and demonstrated autonomous aerial systems",
@@ -87,7 +87,7 @@ export const siteConfig = {
   },
 
   contact: {
-    email: "singularit@cusat.ac.in",
+    email: "SINGULARIT@cusat.ac.in",
     location: "School of Engineering, CUSAT, Kochi, Kerala, India",
   },
 
@@ -99,17 +99,17 @@ export const siteConfig = {
     },
     {
       platform: "LinkedIn",
-      url: "https://linkedin.com/in/singularit",
+      url: "https://linkedin.com/in/SINGULARIT",
       icon: "linkedin",
     },
     {
       platform: "GitHub",
-      url: "https://github.com/singularit-cusat",
+      url: "https://github.com/SINGULARIT-cusat",
       icon: "github",
     },
     {
       platform: "YouTube",
-      url: "https://youtube.com/@singularit",
+      url: "https://youtube.com/@SINGULARIT",
       icon: "youtube",
     },
   ],

@@ -17,7 +17,7 @@ const galleryImages: GalleryImage[] = [
   {
     id: "g1",
     src: "/images/group-photo.jpg",
-    alt: "Team SingularIT Group Photo at CUSAT",
+    alt: "Team SINGULARIT Group Photo at CUSAT",
     category: "Team",
   },
   {
@@ -29,7 +29,7 @@ const galleryImages: GalleryImage[] = [
   {
     id: "g4",
     src: "/images/54620251084_2647218d9d_c.jpg",
-    alt: "Team SingularIT group photo at St. Mary's County Regional Airport (SUAS 2025)",
+    alt: "Team SINGULARIT group photo at St. Mary's County Regional Airport (SUAS 2025)",
     category: "SUAS 2025",
   },
   {
