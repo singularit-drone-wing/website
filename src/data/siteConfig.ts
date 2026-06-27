@@ -5,24 +5,85 @@
 
 export const siteConfig = {
   name: "SingularIT",
-  tagline: "Engineering the Autonomous Future",
+  tagline: "Pioneering Autonomous Aerial Systems",
   description:
-    "SingularIT is CUSAT's premier autonomous systems and robotics team — pushing the boundaries of innovation, engineering, and artificial intelligence.",
+    "SingularIT is a student-led innovation club at Cochin University of Science and Technology, pioneering cutting-edge technology in autonomous systems.",
   url: "https://singularit.in",
 
   about: {
-    headline: "We Are SingularIT",
-    body: `SingularIT is the autonomous systems and robotics team at Cochin University of Science and Technology. We are a multidisciplinary group of engineers, designers, and researchers who design, build, and deploy intelligent machines.\n\nFrom combat robots to self-driving vehicles, from edge-AI systems to drone platforms — we engineer solutions that bridge theory and real-world application. Our work spans embedded systems, computer vision, control theory, mechanical design, and artificial intelligence.\n\nEvery system we build reflects our commitment to engineering excellence, rigorous testing, and continuous innovation.`,
+    headline: "About SingularIT",
+    intro: `SingularIT is a student-led innovation club at Cochin University of Science and Technology, pioneering cutting-edge technology in autonomous systems. We bring together passionate engineers and innovators from diverse disciplines to solve real-world problems through technology.`,
+    foundation: `Founded on the belief that great innovation comes from hands-on learning, we transform theoretical knowledge into groundbreaking applications.`,
+    focus: `Our current focus is on Unmanned Aerial Systems (UAS), a journey that began with mission-focused autonomous systems at SUAS 2025 and has since evolved into high-speed autonomous racing — allowing us to expand our expertise from precision operations to agile, real-time autonomous flight while advancing our broader mission of transforming how students approach technology and innovation.`,
+    differentiator: {
+      question: "What makes us different?",
+      answer: `We are not just a competition team. We are a platform for aspiring engineers to innovate, learn and grow into industry leaders. Whether you are confident in your abilities or still discovering your path, SingularIT empowers you to become a capable professional in your field.`,
+    },
   },
 
   mission: {
     headline: "Our Mission",
-    body: "To cultivate a culture of hands-on engineering and research excellence — empowering students to design, build, and deploy autonomous systems that solve real-world challenges while advancing the frontiers of robotics and artificial intelligence.",
+    statement: `Our mission is to develop autonomous aerial systems across multiple domains — from disaster response operations to high-speed autonomous racing — advancing the state of autonomous flight through both precision and agility.`,
+    bridge: `We bridge the gap between classroom learning and industry-ready application by providing hands-on experience in:`,
+    focusAreas: [
+      {
+        title: "Autonomous Systems & AI",
+        description: "Building intelligent decision-making capabilities",
+      },
+      {
+        title: "Robotics & Hardware",
+        description: "Designing systems that perform in challenging environments",
+      },
+      {
+        title: "Real-world Problem Solving",
+        description: "Tackling problems that have a tangible impact",
+      },
+    ],
+    goal: `Our immediate goal is to advance autonomous aerial systems technology while creating an inclusive environment where every member grows as an engineer and innovator.`,
   },
 
   vision: {
     headline: "Our Vision",
-    body: "To be recognized as one of India's leading university-level autonomous systems teams — producing engineers who shape the future of robotics, space systems, and intelligent infrastructure on a global stage.",
+    statement: `Our vision extends far beyond a single competition. We see SingularIT as:`,
+    pillars: [
+      {
+        title: "A catalyst for innovation",
+        description:
+          "Establishing CUSAT as a hub for cutting-edge autonomous systems research and development",
+      },
+      {
+        title: "A community of builders",
+        description:
+          "Creating a culture where students from all disciplines collaborate, experiment and lead",
+      },
+      {
+        title: "A bridge to industry",
+        description:
+          "Preparing the next generation of engineers to tackle global challenges in robotics, AI and autonomous systems",
+      },
+      {
+        title: "A platform for global impact",
+        description:
+          "Demonstrating that student-led teams from Indian institutions can compete and excel on the world stage",
+      },
+    ],
+    closing: `We believe in empowering students — especially those uncertain about their abilities — and transforming them into some of the most capable professionals in their fields.`,
+  },
+
+  competitions: {
+    headline: "Past Competitions",
+    subtitle: "From National to Global",
+    intro: `Our competitive journey began at THARANG 2K25 (K Karunakaran Memorial Model Polytechnic College, Kallettumkara, Kerala), where team members Gautham Krishna K J and Arun K N showcased our autonomous drone project at this national-level techno-cultural festival — gaining our first recognition and setting our sights higher.`,
+    suas: {
+      title: "AUVSI SUAS 2025 — International Competition",
+      location: "St. Mary's County Regional Airport, Maryland, USA",
+      achievement: `Team SingularIT made history as CUSAT's first autonomous drone flight on a global stage and as Kerala's first and only public sector institution to qualify for this prestigious international competition.`,
+      results: [
+        "Global Mission Ranking: #25 among top international university teams",
+        "Successfully designed and demonstrated autonomous aerial systems",
+        "Competed in real-world challenges including autonomous flight, object detection, aerial mapping, and precision payload delivery",
+      ],
+    },
   },
 
   contact: {
@@ -33,12 +94,12 @@ export const siteConfig = {
   socials: [
     {
       platform: "Instagram",
-      url: "https://instagram.com/singularit_cusat",
+      url: "https://www.instagram.com/_teamsingularit_",
       icon: "instagram",
     },
     {
       platform: "LinkedIn",
-      url: "https://linkedin.com/company/singularit",
+      url: "https://linkedin.com/in/singularit",
       icon: "linkedin",
     },
     {

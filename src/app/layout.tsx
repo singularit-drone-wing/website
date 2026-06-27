@@ -4,20 +4,26 @@
 // ============================================================
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
+import { Orbitron, Share_Tech_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import BackgroundSystem from "@/components/layout/BackgroundSystem";
 
-const inter = Inter({
-  variable: "--font-sans",
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const shareTechMono = Share_Tech_Mono({
+  weight: "400",
+  variable: "--font-share-tech-mono",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -55,10 +61,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${geistMono.variable} dark`}
+      className={`${orbitron.variable} ${shareTechMono.variable} ${jetbrainsMono.variable} dark`}
       data-scroll-behavior="smooth"
     >
-      <body className="min-h-screen bg-black text-white antialiased font-sans">
+      <body className="min-h-screen bg-background text-foreground antialiased font-mono">
         <BackgroundSystem />
         <Navbar />
         {children}

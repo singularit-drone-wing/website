@@ -1,8 +1,6 @@
 // ============================================================
-// Footer — Minimal branded footer
-// Copyright, social links, consistent with the dark aesthetic.
-// Uses inline SVG for social icons since lucide-react v1.21+
-// removed brand/social icons.
+// Footer — Cyberpunk minimal branded footer
+// Technical layout, monospace text, glowing icons.
 // ============================================================
 
 import Link from "next/link";
@@ -53,15 +51,18 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function Footer() {
   return (
-    <footer className="relative z-10 border-t border-white/[0.06] bg-[var(--sit-bg-secondary)]">
+    <footer id="footer" className="relative z-10 border-t border-[var(--sit-border)] bg-[var(--sit-bg-secondary)] overflow-hidden">
+      {/* Decorative top border line with neon glow */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--sit-blue)] to-transparent opacity-50" />
+      
       <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 py-12 md:py-16">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Brand */}
-          <div className="text-center md:text-left">
-            <p className="text-lg font-bold tracking-[0.15em] text-white uppercase">
+          <div className="text-center md:text-left flex flex-col gap-2">
+            <p className="text-2xl font-heading font-black tracking-widest text-white uppercase cyber-glitch">
               SingularIT
             </p>
-            <p className="mt-1 text-sm text-[var(--sit-text-muted)]">
+            <p className="text-xs font-label uppercase tracking-[0.2em] text-[var(--sit-text-muted)]">
               {siteConfig.tagline}
             </p>
           </div>
@@ -74,22 +75,28 @@ export default function Footer() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-10 h-10 rounded-full border border-white/[0.08] text-[var(--sit-text-muted)] hover:text-white hover:border-[var(--sit-blue)]/30 hover:bg-[var(--sit-blue)]/5 transition-all duration-300"
+                className="group flex items-center justify-center w-12 h-12 border border-[var(--sit-border)] bg-[var(--sit-bg-tertiary)] text-[var(--sit-text-muted)] hover:text-[var(--sit-blue)] hover:border-[var(--sit-blue)]/50 transition-all duration-300 cyber-chamfer-sm hover:cyber-border-glow relative"
                 aria-label={social.platform}
               >
-                {iconMap[social.icon] ?? null}
+                <div className="relative z-10 transition-transform group-hover:scale-110">
+                  {iconMap[social.icon] ?? null}
+                </div>
+                <div className="absolute inset-0 bg-[var(--sit-blue)]/0 group-hover:bg-[var(--sit-blue)]/10 transition-colors" />
               </Link>
             ))}
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="mt-10 h-px w-full bg-white/[0.06]" />
-
-        {/* Copyright */}
-        <p className="mt-6 text-center text-xs text-[var(--sit-text-muted)]/60">
-          © {new Date().getFullYear()} SingularIT, CUSAT. All rights reserved.
-        </p>
+        {/* Divider / Terminal status bar */}
+        <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-[var(--sit-border)] pt-8">
+          <p className="text-[10px] font-mono tracking-widest text-[var(--sit-blue)] uppercase opacity-70">
+            SYS.STAT: NOMINAL // CONNECTION_SECURE // END_OF_LINE
+          </p>
+          
+          <p className="text-[10px] font-mono tracking-widest text-[var(--sit-text-muted)] uppercase">
+            © {new Date().getFullYear()} SingularIT, CUSAT.
+          </p>
+        </div>
       </div>
     </footer>
   );

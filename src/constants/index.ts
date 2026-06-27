@@ -11,21 +11,17 @@ export const SECTIONS: SectionMeta[] = [
   { id: "about", label: "About" },
   { id: "mission", label: "Mission" },
   { id: "vision", label: "Vision" },
-  { id: "experiences", label: "Experiences" },
-  { id: "members", label: "Members" },
-  { id: "events", label: "Events" },
-  { id: "contact", label: "Contact" },
+  { id: "competitions", label: "Competitions" },
+  { id: "footer", label: "Contact" },
 ];
 
 /** Navigation items displayed in the navbar */
 export const NAV_ITEMS = [
   { label: "About", href: "#about" },
   { label: "Mission", href: "#mission" },
-  { label: "Experiences", href: "#experiences" },
-  { label: "Members", href: "#members" },
-  { label: "Events", href: "#events" },
+  { label: "Competitions", href: "#competitions" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "#footer" },
 ];
 
 /** Framer Motion animation presets */

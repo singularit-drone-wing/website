@@ -1,13 +1,13 @@
 // ============================================================
 // Contact — Get in touch section
-// Clean layout with email, location, and social links.
+// Cyberpunk layout with technical readouts and cyber-chamfer CTA.
 // ============================================================
 
 "use client";
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight, Terminal } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
 export default function Contact() {
@@ -27,14 +27,20 @@ export default function Contact() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+          <div className="flex items-center gap-3 mb-4">
+            <Terminal size={20} className="text-[var(--sit-blue)]" />
+            <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-[var(--sit-blue)] font-label">
+              // COMM_LINK_ESTABLISHED
+            </p>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black tracking-widest text-white uppercase cyber-glitch">
             Get In Touch
           </h2>
-          <p className="mt-4 max-w-xl text-base md:text-lg text-[var(--sit-text-muted)] leading-relaxed">
-            Interested in collaborating, sponsoring, or joining SingularIT?
-            We&apos;d love to hear from you.
+          <p className="mt-6 max-w-xl text-base md:text-lg text-[var(--sit-text-muted)] font-mono leading-relaxed">
+            <span className="text-[var(--sit-blue)] mr-2">&gt;</span>
+            Interested in collaborating, sponsoring, or joining SingularIT? We&apos;d love to hear from you.
           </p>
-          <div className="mt-6 h-px w-16 bg-gradient-to-r from-[var(--sit-blue)] to-transparent" />
+          <div className="mt-8 h-1 w-24 bg-[var(--sit-blue)] cyber-border-glow" />
         </motion.div>
 
         {/* Contact info */}
@@ -42,44 +48,46 @@ export default function Contact() {
           {/* Email */}
           <motion.a
             href={`mailto:${siteConfig.contact.email}`}
-            className="group glass-card rounded-xl p-6 md:p-8 flex items-start gap-4 hover:border-[var(--sit-blue)]/20 transition-all duration-300"
+            className="group glass-card cyber-chamfer p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 hover:border-[var(--sit-blue)] hover:cyber-border-glow transition-all duration-300 relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            whileHover={{ y: -2 }}
+            whileHover={{ y: -4 }}
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--sit-blue)]/10 text-[var(--sit-blue)]">
-              <Mail size={20} />
+            <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none group-hover:opacity-30 transition-opacity duration-500" />
+            
+            <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center border border-[var(--sit-blue)]/30 bg-[var(--sit-blue)]/10 text-[var(--sit-blue)] group-hover:shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-all">
+              <Mail size={24} />
             </div>
-            <div>
-              <p className="text-xs tracking-wider uppercase text-[var(--sit-text-muted)]">
-                Email
+            <div className="relative z-10 flex-1">
+              <p className="text-xs tracking-[0.2em] uppercase text-[var(--sit-blue)] font-label">
+                // SECURE_EMAIL
               </p>
-              <p className="mt-1 text-base md:text-lg font-medium text-white group-hover:text-[var(--sit-blue-light)] transition-colors duration-300">
+              <p className="mt-2 text-lg md:text-xl font-mono font-medium text-white group-hover:text-[var(--sit-blue)] transition-colors duration-300 break-all">
                 {siteConfig.contact.email}
               </p>
             </div>
             <ArrowUpRight
-              size={16}
-              className="ml-auto mt-1 text-[var(--sit-text-muted)] group-hover:text-[var(--sit-blue)] transition-colors duration-300"
+              size={24}
+              className="relative z-10 hidden sm:block text-[var(--sit-text-muted)] group-hover:text-[var(--sit-blue)] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
             />
           </motion.a>
 
           {/* Location */}
           <motion.div
-            className="glass-card rounded-xl p-6 md:p-8 flex items-start gap-4"
+            className="group glass-card cyber-chamfer p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-6 relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--sit-blue)]/10 text-[var(--sit-blue)]">
-              <MapPin size={20} />
+            <div className="relative z-10 flex h-14 w-14 shrink-0 items-center justify-center border border-[var(--sit-border)] bg-[var(--sit-bg-tertiary)] text-[var(--sit-text-muted)] group-hover:border-[var(--sit-blue)]/50 group-hover:text-[var(--sit-blue)] transition-all">
+              <MapPin size={24} />
             </div>
-            <div>
-              <p className="text-xs tracking-wider uppercase text-[var(--sit-text-muted)]">
-                Location
+            <div className="relative z-10">
+              <p className="text-xs tracking-[0.2em] uppercase text-[var(--sit-text-muted)] font-label group-hover:text-[var(--sit-blue)] transition-colors">
+                // HEADQUARTERS
               </p>
-              <p className="mt-1 text-base md:text-lg font-medium text-white">
+              <p className="mt-2 text-lg md:text-xl font-mono font-medium text-white">
                 {siteConfig.contact.location}
               </p>
             </div>
@@ -88,20 +96,21 @@ export default function Contact() {
 
         {/* CTA */}
         <motion.div
-          className="mt-16 md:mt-20 text-center"
+          className="mt-16 md:mt-20 flex justify-center md:justify-start"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
         >
           <a
             href={`mailto:${siteConfig.contact.email}`}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[var(--sit-blue)] text-white text-sm font-medium hover:bg-[var(--sit-blue-light)] transition-colors duration-300 shadow-[0_0_30px_rgba(37,99,235,0.2)]"
+            className="group flex items-center gap-3 px-8 py-4 cyber-chamfer border border-[var(--sit-blue)] bg-[var(--sit-blue)]/10 text-white font-label uppercase tracking-widest hover:bg-[var(--sit-blue)] hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,255,0.6)]"
           >
-            Reach Out
-            <ArrowUpRight size={16} />
+            INITIALIZE_CONTACT
+            <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </a>
         </motion.div>
       </div>
     </section>
   );
 }
+

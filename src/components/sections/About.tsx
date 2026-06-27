@@ -1,6 +1,6 @@
 // ============================================================
 // About — Who is SingularIT?
-// Editorial layout with large headline and rich body text.
+// Cyberpunk layout with chamfered cards and glowing borders.
 // ============================================================
 
 "use client";
@@ -12,8 +12,6 @@ import { siteConfig } from "@/data/siteConfig";
 export default function About() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const paragraphs = siteConfig.about.body.split("\n\n");
 
   return (
     <section
@@ -28,57 +26,93 @@ export default function About() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05]">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black tracking-widest text-white leading-[1.05] uppercase">
             {siteConfig.about.headline}
           </h2>
-          <div className="mt-6 h-px w-20 bg-gradient-to-r from-[var(--sit-blue)] to-transparent" />
+          <div className="mt-6 h-1 w-24 bg-[var(--sit-blue)] cyber-border-glow" />
         </motion.div>
 
-        {/* Body */}
+        {/* Intro + Foundation */}
         <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          {paragraphs.map((para, i) => (
-            <motion.p
-              key={i}
-              className="text-base md:text-lg leading-relaxed text-[var(--sit-text-muted)]"
-              initial={{ opacity: 0, y: 30 }}
-              animate={
-                isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
-              }
-              transition={{
-                duration: 0.7,
-                delay: 0.2 + i * 0.15,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
-            >
-              {para}
-            </motion.p>
-          ))}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.2,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+          >
+            <p className="text-sm font-label text-[var(--sit-blue)] tracking-[0.2em] mb-4 uppercase">
+              // SYS.INFO: Introduction
+            </p>
+            <p className="text-base md:text-lg leading-relaxed text-[var(--sit-text-muted)] font-mono">
+              {siteConfig.about.intro}
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{
+              duration: 0.7,
+              delay: 0.35,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+          >
+            <p className="text-sm font-label text-[var(--sit-blue)] tracking-[0.2em] mb-4 uppercase">
+              // SYS.INFO: Foundation
+            </p>
+            <p className="text-base md:text-lg leading-relaxed text-[var(--sit-text-muted)] font-mono">
+              {siteConfig.about.foundation}
+            </p>
+          </motion.div>
         </div>
 
-        {/* Stats row */}
+        {/* Focus paragraph — full width */}
         <motion.div
-          className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
+          className="mt-10 max-w-4xl"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.7, delay: 0.6, ease: "easeOut" }}
+          transition={{
+            duration: 0.7,
+            delay: 0.5,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
         >
-          {[
-            { value: "30+", label: "Active Members" },
-            { value: "15+", label: "Projects Built" },
-            { value: "8+", label: "Competitions" },
-            { value: "5+", label: "Years Active" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center md:text-left">
-              <p className="text-3xl md:text-4xl font-bold text-white">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-sm text-[var(--sit-text-muted)]">
-                {stat.label}
-              </p>
-            </div>
-          ))}
+          <p className="text-sm font-label text-[var(--sit-blue)] tracking-[0.2em] mb-4 uppercase">
+            // SYS.INFO: Current_Focus
+          </p>
+          <p className="text-base md:text-lg leading-relaxed text-[var(--sit-text-muted)] font-mono border-l-2 border-[var(--sit-border)] pl-6">
+            {siteConfig.about.focus}
+          </p>
+        </motion.div>
+
+        {/* What makes us different? */}
+        <motion.div
+          className="mt-16 md:mt-20 glass-card p-8 md:p-12 border-l-4 border-l-[var(--sit-blue)] cyber-chamfer hover:cyber-border-glow transition-all duration-500 relative overflow-hidden group"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.65,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+        >
+          {/* Decorative background grid in card */}
+          <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none group-hover:opacity-40 transition-opacity duration-500" />
+          
+          <div className="relative z-10">
+            <h3 className="text-2xl md:text-3xl font-heading font-black text-white tracking-widest uppercase">
+              {siteConfig.about.differentiator.question}
+            </h3>
+            <p className="mt-6 text-base md:text-lg leading-relaxed text-white/90 font-mono">
+              <span className="text-[var(--sit-blue)] mr-2">&gt;</span>
+              {siteConfig.about.differentiator.answer}
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>
   );
 }
+

@@ -1,24 +1,74 @@
 // ============================================================
 // Gallery Page — Dedicated route for image gallery
-// Responsive grid with lightbox modal for fullscreen viewing.
+// Cyberpunk grid with holographic UI tags and lightbox modal.
 // ============================================================
 
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, X, ChevronLeft, ChevronRight } from "lucide-react";
 import type { GalleryImage } from "@/types";
 
-// Placeholder gallery data — replace with actual images
-const galleryImages: GalleryImage[] = Array.from({ length: 12 }, (_, i) => ({
-  id: `g${i + 1}`,
-  src: "/images/events/placeholder.svg",
-  alt: `SingularIT Gallery Image ${i + 1}`,
-  category: ["Robotics", "Events", "Workshop", "Competition"][i % 4],
-}));
+// Real gallery data using the uploaded images in /public/images/
+const galleryImages: GalleryImage[] = [
+  {
+    id: "g1",
+    src: "/images/group-photo.jpg",
+    alt: "Team SingularIT Group Photo at CUSAT",
+    category: "Team",
+  },
+  {
+    id: "g2",
+    src: "/images/pre_comp.jpeg",
+    alt: "Team preparation and hardware alignment before flight tests",
+    category: "Competition",
+  },
+  {
+    id: "g4",
+    src: "/images/54620251084_2647218d9d_c.jpg",
+    alt: "Team SingularIT group photo at St. Mary's County Regional Airport (SUAS 2025)",
+    category: "SUAS 2025",
+  },
+  {
+    id: "g5",
+    src: "/images/54620081981_76dbc65269_c.jpg",
+    alt: "Autonomous drone in flight over the airfield at SUAS 2025",
+    category: "SUAS 2025",
+  },
+  {
+    id: "g6",
+    src: "/images/54620272224_8591cd6871_c.jpg",
+    alt: "Precision payload delivery challenge in action during SUAS 2025",
+    category: "SUAS 2025",
+  },
+  {
+    id: "g7",
+    src: "/images/54620350378_953c0ea0ab_k.jpg",
+    alt: "Pre-flight calibration and sensor initialization on the flight line",
+    category: "SUAS 2025",
+  },
+  {
+    id: "g8",
+    src: "/images/54620405443_b26c377e7d_k.jpg",
+    alt: "UAS navigation mapping and object detection testing run",
+    category: "SUAS 2025",
+  },
+  {
+    id: "g9",
+    src: "/images/12.JPG",
+    alt: "Outdoor field testing and telemetry tracking operations",
+    category: "Testing",
+  },
+  {
+    id: "g10",
+    src: "/images/IMG_8114.JPG",
+    alt: "Hardware assembly and custom carbon fiber fabrication in the lab",
+    category: "Workshop",
+  },
+];
 
 export default function GalleryPage() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -47,65 +97,112 @@ export default function GalleryPage() {
     );
   }, []);
 
+  // Keyboard navigation event listeners
+  useEffect(() => {
+    if (selectedIndex === null) return;
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        closeLightbox();
+      } else if (e.key === "ArrowRight") {
+        goNext();
+      } else if (e.key === "ArrowLeft") {
+        goPrev();
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedIndex, closeLightbox, goNext, goPrev]);
+
   return (
-    <main className="relative z-10 min-h-screen bg-[var(--sit-bg-primary)]">
+    <main className={`relative min-h-screen bg-[var(--sit-bg-primary)] cyber-scanlines ${selectedIndex !== null ? "z-[100]" : "z-10"}`}>
+      {/* Base Grid */}
+      <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
+
       {/* Header */}
-      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 pt-28 md:pt-36 pb-12">
+      <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12 pt-28 md:pt-36 pb-12">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm text-[var(--sit-text-muted)] hover:text-white transition-colors duration-300 mb-8"
+          className="inline-flex items-center gap-2 text-sm text-[var(--sit-blue)] hover:text-white transition-colors duration-300 mb-8 font-label uppercase tracking-widest border border-[var(--sit-blue)]/50 bg-[var(--sit-blue)]/10 px-4 py-2 cyber-chamfer-sm"
         >
           <ArrowLeft size={16} />
-          Back to Home
+          [ESC] Return_To_Base
         </Link>
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-          Gallery
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black tracking-widest text-white uppercase cyber-glitch">
+          Visual_Logs
         </h1>
-        <p className="mt-4 max-w-xl text-base md:text-lg text-[var(--sit-text-muted)] leading-relaxed">
-          Moments from our journey — competitions, builds, workshops, and
-          everything in between.
+        <p className="mt-6 max-w-xl text-base md:text-lg text-[var(--sit-text-muted)] font-mono leading-relaxed">
+          <span className="text-[var(--sit-blue)] mr-2">&gt;</span>
+          Archived visual data from field tests, hardware assembly, and global deployments.
         </p>
-        <div className="mt-6 h-px w-16 bg-gradient-to-r from-[var(--sit-blue)] to-transparent" />
+        <div className="mt-8 h-1 w-24 bg-[var(--sit-blue)] cyber-border-glow" />
       </div>
 
       {/* Image Grid */}
-      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 pb-24">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-          {galleryImages.map((img, i) => (
-            <motion.button
-              key={img.id}
-              className="group relative aspect-square overflow-hidden rounded-lg bg-[var(--sit-bg-tertiary)] cursor-pointer"
-              onClick={() => openLightbox(i)}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.03 }}
-              whileHover={{ scale: 1.02 }}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
-              {img.category && (
-                <div className="absolute bottom-2 left-2 px-2 py-0.5 rounded text-[10px] font-mono tracking-wider uppercase text-white/0 group-hover:text-white/80 bg-transparent group-hover:bg-black/50 transition-all duration-300">
-                  {img.category}
+      <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12 pb-24">
+        {galleryImages.length === 0 ? (
+          <div className="text-center py-20 font-mono text-[var(--sit-blue)]">
+            <p>ERR: NO_DATA_FOUND</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {galleryImages.map((img, i) => (
+              <motion.button
+                key={img.id}
+                layout
+                className="group relative aspect-[4/3] overflow-hidden bg-[var(--sit-bg-tertiary)] border border-[var(--sit-border)] hover:border-[var(--sit-blue)] cursor-pointer cyber-chamfer hover:cyber-border-glow transition-all duration-300"
+                onClick={() => openLightbox(i)}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.4, delay: i * 0.05 }}
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={i < 4}
+                />
+                
+                {/* Tech scanline overlay inside image */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--sit-bg-primary)] via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-[var(--sit-blue)]/0 group-hover:bg-[var(--sit-blue)]/10 transition-colors duration-300 mix-blend-overlay" />
+                
+                {/* Holographic Category Label */}
+                {img.category && (
+                  <div className="absolute top-4 left-4 px-2 py-1 text-[10px] font-label tracking-[0.2em] uppercase text-[var(--sit-blue)] bg-[var(--sit-bg-primary)]/80 border-l-2 border-[var(--sit-blue)] backdrop-blur-sm group-hover:shadow-[0_0_10px_rgba(0,240,255,0.5)] transition-all">
+                    {img.category}
+                  </div>
+                )}
+
+                {/* Cyber Frame Decorators */}
+                <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-[var(--sit-blue)] opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[var(--sit-blue)] opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                {/* Alt text caption shown on hover */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 pointer-events-none">
+                  <p className="text-xs font-mono text-white line-clamp-2">
+                    <span className="text-[var(--sit-blue)] mr-2">&gt;</span>
+                    {img.alt}
+                  </p>
                 </div>
-              )}
-            </motion.button>
-          ))}
-        </div>
+              </motion.button>
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Holographic Lightbox Modal */}
       <AnimatePresence>
-        {selectedIndex !== null && (
+        {selectedIndex !== null && galleryImages[selectedIndex] && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center"
+            className="fixed inset-0 z-[100] flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -113,59 +210,94 @@ export default function GalleryPage() {
           >
             {/* Backdrop */}
             <div
-              className="absolute inset-0 bg-black/90 backdrop-blur-md"
+              className="absolute inset-0 bg-[var(--sit-bg-primary)]/95 backdrop-blur-xl"
               onClick={closeLightbox}
             />
+            {/* Grid behind lightbox */}
+            <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
 
             {/* Close button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-6 right-6 z-10 p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-all"
+              className="absolute top-6 right-6 md:top-8 md:right-10 z-20 p-3 rounded-none border border-[var(--sit-blue)]/50 text-[var(--sit-blue)] hover:text-white hover:bg-[var(--sit-blue)] hover:shadow-[0_0_15px_rgba(0,240,255,0.6)] transition-all duration-300 cyber-chamfer-sm group"
               aria-label="Close lightbox"
             >
-              <X size={24} />
+              <X size={24} className="group-hover:rotate-90 transition-transform" />
             </button>
 
             {/* Navigation arrows */}
             <button
               onClick={goPrev}
-              className="absolute left-4 z-10 p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-all"
+              className="absolute left-4 md:left-10 z-20 p-4 border border-[var(--sit-blue)]/30 text-[var(--sit-blue)] hover:text-black hover:bg-[var(--sit-blue)] transition-all duration-300 cyber-chamfer-sm group"
               aria-label="Previous image"
             >
-              <ChevronLeft size={28} />
+              <ChevronLeft size={32} className="group-hover:-translate-x-1 transition-transform" />
             </button>
             <button
               onClick={goNext}
-              className="absolute right-4 z-10 p-2 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-all"
+              className="absolute right-4 md:right-10 z-20 p-4 border border-[var(--sit-blue)]/30 text-[var(--sit-blue)] hover:text-black hover:bg-[var(--sit-blue)] transition-all duration-300 cyber-chamfer-sm group"
               aria-label="Next image"
             >
-              <ChevronRight size={28} />
+              <ChevronRight size={32} className="group-hover:translate-x-1 transition-transform" />
             </button>
 
-            {/* Image */}
-            <motion.div
-              className="relative z-10 w-[90vw] h-[80vh] max-w-5xl"
-              key={selectedIndex}
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image
-                src={galleryImages[selectedIndex].src}
-                alt={galleryImages[selectedIndex].alt}
-                fill
-                className="object-contain"
-                sizes="90vw"
-                priority
-              />
-            </motion.div>
+            {/* Image & Caption Wrapper */}
+            <div className="relative z-10 flex flex-col items-center justify-center max-w-6xl w-[90vw] h-[85vh]">
+              {/* Outer Cyber Frame for image */}
+              <motion.div
+                className="relative w-full h-[70vh] border border-[var(--sit-blue)]/40 p-2 bg-[var(--sit-bg-secondary)]/80 cyber-chamfer shadow-[0_0_30px_rgba(0,240,255,0.15)]"
+                key={selectedIndex}
+                initial={{ scale: 0.95, opacity: 0, filter: "brightness(2) contrast(1.5)" }}
+                animate={{ scale: 1, opacity: 1, filter: "brightness(1) contrast(1)" }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                {/* HUD Corners */}
+                <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-[var(--sit-blue)] pointer-events-none" />
+                <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-[var(--sit-blue)] pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-[var(--sit-blue)] pointer-events-none" />
+                <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-[var(--sit-blue)] pointer-events-none" />
 
-            {/* Caption */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center z-10">
-              <p className="text-sm text-white/60">
-                {selectedIndex + 1} / {galleryImages.length}
-              </p>
+                <div className="relative w-full h-full cyber-chamfer overflow-hidden">
+                  <Image
+                    src={galleryImages[selectedIndex].src}
+                    alt={galleryImages[selectedIndex].alt}
+                    fill
+                    className="object-contain"
+                    sizes="90vw"
+                    priority
+                  />
+                  {/* Subtle scanline on the image itself */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--sit-blue)]/5 to-transparent pointer-events-none animate-pulse" />
+                </div>
+              </motion.div>
+              
+              {/* Terminal Readout Details */}
+              <motion.div 
+                className="mt-6 w-full max-w-4xl px-4 flex flex-col md:flex-row items-center justify-between gap-4"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="flex-1 text-center md:text-left">
+                  <span className="inline-block px-3 py-1 border-l-2 border-[var(--sit-blue)] text-[10px] font-label tracking-[0.2em] uppercase text-white bg-[var(--sit-blue)]/20 mb-2">
+                    {galleryImages[selectedIndex].category}
+                  </span>
+                  <p className="text-sm md:text-base text-white/90 font-mono">
+                    <span className="text-[var(--sit-blue)] mr-2">&gt;</span>
+                    {galleryImages[selectedIndex].alt}
+                  </p>
+                </div>
+                
+                <div className="shrink-0 text-right">
+                  <p className="text-xs font-label uppercase tracking-widest text-[var(--sit-blue)] mb-1">
+                    SYS_INDEX
+                  </p>
+                  <p className="text-sm font-mono text-[var(--sit-text-muted)]">
+                    [ {String(selectedIndex + 1).padStart(2, '0')} / {String(galleryImages.length).padStart(2, '0')} ]
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         )}
