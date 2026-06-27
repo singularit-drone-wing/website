@@ -134,7 +134,7 @@ export default function GalleryPage() {
           Return
         </Link>
 
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black tracking-widest text-white uppercase cyber-glitch">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-heading font-black tracking-[0.08em] sm:tracking-widest text-white uppercase cyber-glitch leading-tight">
           Visual_Logs
         </h1>
         <p className="mt-6 max-w-xl text-base md:text-lg text-[var(--sit-text-muted)] font-mono leading-relaxed">

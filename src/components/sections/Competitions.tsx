@@ -20,13 +20,13 @@ export default function Competitions() {
     <section
       id="competitions"
       ref={ref}
-      className="relative z-10 py-24 md:py-32 lg:py-40 bg-[var(--sit-bg-primary)] border-y border-[var(--sit-border)]"
+      className="relative z-10 py-20 md:py-32 lg:py-40 bg-[var(--sit-bg-primary)] border-y border-[var(--sit-border)]"
     >
       {/* Background scanlines specific to this section */}
       <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
       <div className="absolute inset-0 bg-[var(--sit-bg-secondary)]/50 backdrop-blur-sm" />
 
-      <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
           {/* Section Heading */}
           <motion.div
@@ -35,13 +35,14 @@ export default function Competitions() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center justify-center gap-2 md:gap-3">
               <Trophy size={20} className="text-[var(--sit-blue)]" />
-              <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-[var(--sit-blue)] font-label">
-                // {competitions.headline}
+              <p className="text-[11px] sm:text-xs md:text-sm tracking-[0.18em] md:tracking-[0.3em] uppercase text-[var(--sit-blue)] font-label text-center">
+                {"// "}
+                {competitions.headline}
               </p>
             </div>
-            <h2 className="mt-6 text-3xl md:text-4xl lg:text-5xl font-heading font-black tracking-widest text-white uppercase cyber-glitch">
+            <h2 className="mt-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-black tracking-[0.1em] sm:tracking-[0.14em] md:tracking-widest text-white uppercase cyber-glitch leading-tight wrap-anywhere">
               {competitions.subtitle}
             </h2>
             <div className="mt-6 mx-auto h-1 w-24 bg-[var(--sit-blue)] cyber-border-glow" />
@@ -49,7 +50,7 @@ export default function Competitions() {
 
           {/* THARANG intro */}
           <motion.p
-            className="mt-12 text-base md:text-lg text-[var(--sit-text-muted)] font-mono leading-relaxed max-w-4xl text-center mx-auto"
+            className="mt-10 md:mt-12 text-sm sm:text-base md:text-lg text-[var(--sit-text-muted)] font-mono leading-relaxed max-w-4xl text-center mx-auto wrap-anywhere"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
@@ -60,7 +61,7 @@ export default function Competitions() {
 
           {/* SUAS 2025 — Featured Competition Card */}
           <motion.div
-            className="mt-12 md:mt-16 glass-card p-1 cyber-chamfer overflow-hidden group hover:cyber-border-glow transition-all duration-500 relative"
+            className="mt-10 md:mt-16 glass-card p-1 cyber-chamfer overflow-hidden group hover:cyber-border-glow transition-all duration-500 relative"
             initial={{ opacity: 0, scale: 0.95, y: 40 }}
             animate={
               isInView
@@ -77,44 +78,44 @@ export default function Competitions() {
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--sit-blue)] via-transparent to-[var(--sit-blue-light)] opacity-20 group-hover:opacity-50 transition-opacity duration-500" />
             
             {/* Card Content Area */}
-            <div className="relative bg-[var(--sit-bg-secondary)] p-8 md:p-10 lg:p-12 cyber-chamfer z-10">
-              <div className="flex flex-wrap items-start gap-4">
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-[var(--sit-blue)]/50 bg-[var(--sit-blue)]/10 text-[var(--sit-blue)] shadow-[0_0_15px_rgba(0,240,255,0.2)]">
-                  <Plane size={28} />
+            <div className="relative bg-[var(--sit-bg-secondary)] p-5 sm:p-6 md:p-10 lg:p-12 cyber-chamfer z-10">
+              <div className="flex flex-wrap items-start gap-3 sm:gap-4">
+                <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center border border-[var(--sit-blue)]/50 bg-[var(--sit-blue)]/10 text-[var(--sit-blue)] shadow-[0_0_15px_rgba(0,240,255,0.2)]">
+                  <Plane size={24} className="sm:h-7 sm:w-7" />
                 </div>
-                <div className="flex-1 min-w-0 mt-1">
-                  <h3 className="text-3xl md:text-4xl font-heading font-bold text-white tracking-widest uppercase">
+                <div className="flex-1 min-w-0 mt-0.5 sm:mt-1">
+                  <h3 className="text-xl sm:text-2xl md:text-4xl font-heading font-bold text-white tracking-[0.08em] sm:tracking-[0.12em] md:tracking-widest uppercase leading-tight wrap-anywhere">
                     {competitions.suas.title}
                   </h3>
-                  <div className="mt-3 flex items-center gap-2 text-sm text-[var(--sit-text-muted)] font-mono">
-                    <MapPin size={16} className="text-[var(--sit-blue)]" />
-                    <span>LOC // {competitions.suas.location}</span>
+                  <div className="mt-3 flex items-start gap-2 text-xs sm:text-sm text-[var(--sit-text-muted)] font-mono leading-relaxed min-w-0">
+                    <MapPin size={16} className="text-[var(--sit-blue)] shrink-0 mt-0.5" />
+                    <span className="wrap-anywhere min-w-0">LOC // {competitions.suas.location}</span>
                   </div>
                 </div>
               </div>
 
               {/* Achievement */}
-              <div className="mt-8 flex items-start gap-4 p-5 cyber-chamfer-sm bg-[var(--sit-blue)]/5 border border-[var(--sit-blue)]/20">
+              <div className="mt-6 sm:mt-8 flex items-start gap-3 sm:gap-4 p-4 sm:p-5 cyber-chamfer-sm bg-[var(--sit-blue)]/5 border border-[var(--sit-blue)]/20">
                 <Award
-                  size={24}
+                  size={20}
                   className="shrink-0 mt-1 text-[var(--sit-blue)] drop-shadow-[0_0_8px_rgba(0,240,255,0.8)]"
                 />
-                <p className="text-base md:text-lg text-white/90 leading-relaxed font-mono">
+                <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed font-mono wrap-anywhere">
                   {competitions.suas.achievement}
                 </p>
               </div>
 
               {/* Results */}
-              <div className="mt-10 border-t border-[var(--sit-border)] pt-8">
-                <p className="text-sm font-label tracking-[0.2em] uppercase text-[var(--sit-blue)] mb-6 flex items-center gap-2">
+              <div className="mt-8 md:mt-10 border-t border-[var(--sit-border)] pt-6 md:pt-8">
+                <p className="text-xs sm:text-sm font-label tracking-[0.14em] sm:tracking-[0.2em] uppercase text-[var(--sit-blue)] mb-5 md:mb-6 flex items-center gap-2 wrap-anywhere">
                   <span className="h-px w-4 bg-[var(--sit-blue)]"></span>
                   MISSION_RESULTS
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-3 sm:space-y-4">
                   {competitions.suas.results.map((result, i) => (
                     <motion.li
                       key={i}
-                      className="flex items-start gap-4"
+                      className="flex items-start gap-3 sm:gap-4 min-w-0"
                       initial={{ opacity: 0, x: -20 }}
                       animate={
                         isInView
@@ -128,10 +129,10 @@ export default function Competitions() {
                       }}
                     >
                       <CheckCircle
-                        size={20}
+                        size={18}
                         className="shrink-0 mt-0.5 text-[var(--sit-blue)] drop-shadow-[0_0_5px_rgba(0,240,255,0.5)]"
                       />
-                      <span className="text-base text-[var(--sit-text-muted)] font-mono leading-relaxed">
+                      <span className="text-sm sm:text-base text-[var(--sit-text-muted)] font-mono leading-relaxed wrap-anywhere min-w-0">
                         {result}
                       </span>
                     </motion.li>
