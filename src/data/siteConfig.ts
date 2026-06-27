@@ -76,7 +76,7 @@ export const siteConfig = {
     intro: `Our competitive journey began at THARANG 2K25 (K Karunakaran Memorial Model Polytechnic College, Kallettumkara, Kerala), where team members Gautham Krishna K J and Arun K N showcased our autonomous drone project at this national-level techno-cultural festival — gaining our first recognition and setting our sights higher.`,
     suas: {
       title: "AUVSI SUAS 2025 — International Competition",
-      location: "St. Mary's County Regional Airport, Maryland, USA",
+      location: "St. Mary's County Regional Airport, Maryland, USA 🇺🇸",
       achievement: `Team SINGULARIT made history as CUSAT's first autonomous drone flight on a global stage and as Kerala's first and only public sector institution to qualify for this prestigious international competition.`,
       results: [
         "Global Mission Ranking: #25 among top international university teams",
@@ -111,6 +111,6 @@ export const siteConfig = {
       platform: "YouTube",
       url: "https://www.youtube.com/@SingularIT-y8k",
       icon: "youtube",
-    },
+    }
   ],
 } as const;

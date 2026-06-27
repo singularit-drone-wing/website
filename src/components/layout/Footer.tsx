@@ -40,13 +40,12 @@ function YoutubeIcon() {
     </svg>
   );
 }
-
 /** Maps social icon string keys to SVG components */
 const iconMap: Record<string, React.ReactNode> = {
   github: <GithubIcon />,
   instagram: <InstagramIcon />,
   linkedin: <LinkedinIcon />,
-  youtube: <YoutubeIcon />,
+  youtube: <YoutubeIcon />
 };
 
 export default function Footer() {
@@ -60,7 +59,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="text-center md:text-left flex flex-col gap-2">
             <p className="text-2xl font-heading font-black tracking-widest text-white uppercase cyber-glitch">
-              SINGULARIT
+              SingularIT
             </p>
             <p className="text-xs font-label uppercase tracking-[0.2em] text-[var(--sit-text-muted)]">
               {siteConfig.tagline}
@@ -79,7 +78,7 @@ export default function Footer() {
                 aria-label={social.platform}
               >
                 <div className="relative z-10 transition-transform group-hover:scale-110">
-                  {iconMap[social.icon] ?? null}
+                  {"icon" in social ? iconMap[social.icon] ?? null : null}
                 </div>
                 <div className="absolute inset-0 bg-[var(--sit-blue)]/0 group-hover:bg-[var(--sit-blue)]/10 transition-colors" />
               </Link>
@@ -94,7 +93,7 @@ export default function Footer() {
           </p>
           
           <p className="text-[10px] font-mono tracking-widest text-[var(--sit-text-muted)] uppercase">
-            © {new Date().getFullYear()} SINGULARIT, CUSAT.
+            © {new Date().getFullYear()} SingularIT, CUSAT.
           </p>
         </div>
       </div>

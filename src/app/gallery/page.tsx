@@ -22,9 +22,15 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: "g2",
+    src: "/images/leads.JPG",
+    alt: "Team SINGULARIT Leads for SUAS 2025 and THARANG 2K25",
+    category: "Team",
+  },
+  {
+    id: "g3",
     src: "/images/pre_comp.jpeg",
-    alt: "Team preparation and hardware alignment before flight tests",
-    category: "Competition",
+    alt: "Team preparation and hardware alignment",
+    category: "Pre-Competition",
   },
   {
     id: "g4",
@@ -34,40 +40,35 @@ const galleryImages: GalleryImage[] = [
   },
   {
     id: "g5",
-    src: "/images/54620081981_76dbc65269_c.jpg",
-    alt: "Autonomous drone in flight over the airfield at SUAS 2025",
+    src: "/images/working.jpg",
+    alt: "Last minute hardware and software checks before the competition",
     category: "SUAS 2025",
   },
   {
     id: "g6",
     src: "/images/54620272224_8591cd6871_c.jpg",
-    alt: "Precision payload delivery challenge in action during SUAS 2025",
+    alt: "Our team members after the flight",
     category: "SUAS 2025",
   },
   {
     id: "g7",
     src: "/images/54620350378_953c0ea0ab_k.jpg",
-    alt: "Pre-flight calibration and sensor initialization on the flight line",
+    alt: "Maruthy, our drone at SUAS 2025",
     category: "SUAS 2025",
   },
   {
     id: "g8",
     src: "/images/54620405443_b26c377e7d_k.jpg",
-    alt: "UAS navigation mapping and object detection testing run",
+    alt: "Indian Teams at SUAS 2025",
     category: "SUAS 2025",
   },
   {
     id: "g9",
     src: "/images/12.JPG",
-    alt: "Outdoor field testing and telemetry tracking operations",
-    category: "Testing",
+    alt: "Team SINGULARIT at SUAS 2025, Maryland, USA",
+    category: "SUAS 2025",
   },
-  {
-    id: "g10",
-    src: "/images/IMG_8114.JPG",
-    alt: "Hardware assembly and custom carbon fiber fabrication in the lab",
-    category: "Workshop",
-  },
+
 ];
 
 export default function GalleryPage() {
@@ -129,7 +130,7 @@ export default function GalleryPage() {
           className="inline-flex items-center gap-2 text-sm text-[var(--sit-blue)] hover:text-white transition-colors duration-300 mb-8 font-label uppercase tracking-widest border border-[var(--sit-blue)]/50 bg-[var(--sit-blue)]/10 px-4 py-2 cyber-chamfer-sm"
         >
           <ArrowLeft size={16} />
-          [ESC] Return_To_Base
+          Return
         </Link>
 
         <h1 className="text-4xl md:text-5xl lg:text-7xl font-heading font-black tracking-widest text-white uppercase cyber-glitch">
@@ -137,7 +138,7 @@ export default function GalleryPage() {
         </h1>
         <p className="mt-6 max-w-xl text-base md:text-lg text-[var(--sit-text-muted)] font-mono leading-relaxed">
           <span className="text-[var(--sit-blue)] mr-2">&gt;</span>
-          Archived visual data from field tests, hardware assembly, and global deployments.
+          Archived photos from our journey so far.
         </p>
         <div className="mt-8 h-1 w-24 bg-[var(--sit-blue)] cyber-border-glow" />
       </div>
