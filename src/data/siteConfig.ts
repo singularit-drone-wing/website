@@ -111,6 +111,11 @@ export const siteConfig = {
       platform: "YouTube",
       url: "https://www.youtube.com/@SingularIT-y8k",
       icon: "youtube",
+    },
+    {
+      platform: "Gmail",
+      url: "mailto:officialsingularit@gmail.com",
+      icon: "gmail",
     }
   ],
 } as const;

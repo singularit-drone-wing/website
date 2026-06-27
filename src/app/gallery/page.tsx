@@ -15,6 +15,12 @@ import type { GalleryImage } from "@/types";
 // Real gallery data using the uploaded images in /public/images/
 const galleryImages: GalleryImage[] = [
   {
+    id: "g9",
+    src: "/images/12.JPG",
+    alt: "Team SINGULARIT at SUAS 2025, Maryland, USA",
+    category: "SUAS 2025",
+  },
+  {
     id: "g1",
     src: "/images/group-photo.jpg",
     alt: "Team SINGULARIT Group Photo at CUSAT",
@@ -35,7 +41,7 @@ const galleryImages: GalleryImage[] = [
   {
     id: "g4",
     src: "/images/54620251084_2647218d9d_c.jpg",
-    alt: "Team SINGULARIT group photo at St. Mary's County Regional Airport (SUAS 2025)",
+    alt: "Setting up Maruthy, our autonomous drone, for the competition",
     category: "SUAS 2025",
   },
   {
@@ -62,12 +68,7 @@ const galleryImages: GalleryImage[] = [
     alt: "Indian Teams at SUAS 2025",
     category: "SUAS 2025",
   },
-  {
-    id: "g9",
-    src: "/images/12.JPG",
-    alt: "Team SINGULARIT at SUAS 2025, Maryland, USA",
-    category: "SUAS 2025",
-  },
+  
 
 ];
 

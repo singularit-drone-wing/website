@@ -40,12 +40,21 @@ function YoutubeIcon() {
     </svg>
   );
 }
+
+function GmailIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+    </svg>
+  );
+}
 /** Maps social icon string keys to SVG components */
 const iconMap: Record<string, React.ReactNode> = {
   github: <GithubIcon />,
   instagram: <InstagramIcon />,
   linkedin: <LinkedinIcon />,
-  youtube: <YoutubeIcon />
+  youtube: <YoutubeIcon />,
+  gmail: <GmailIcon />
 };
 
 export default function Footer() {
