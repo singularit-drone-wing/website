@@ -5,25 +5,25 @@
 
 export const siteConfig = {
   name: "SINGULARIT",
-  tagline: "Pioneering Autonomous Aerial Systems",
+  tagline: "Student Innovation Club",
   description:
     "SINGULARIT is a student-led innovation club at Cochin University of Science and Technology, pioneering cutting-edge technology in autonomous systems.",
   url: "https://teamsingularit.com",
 
   about: {
     headline: "About SINGULARIT",
-    intro: `SINGULARIT is a student-led innovation club at Cochin University of Science and Technology, pioneering cutting-edge technology in autonomous systems. We bring together passionate engineers and innovators from diverse disciplines to solve real-world problems through technology.`,
-    foundation: `Founded on the belief that great innovation comes from hands-on learning, we transform theoretical knowledge into groundbreaking applications.`,
-    focus: `Our current focus is on Unmanned Aerial Systems (UAS), a journey that began with mission-focused autonomous systems at SUAS 2025 and has since evolved into high-speed autonomous racing — allowing us to expand our expertise from precision operations to agile, real-time autonomous flight while advancing our broader mission of transforming how students approach technology and innovation.`,
+    intro: `SINGULARIT is a student-led innovation club at Cochin University of Science and Technology. We are dedicated to solving real world problems through student efforts in various domains. 
+    `,
+    foundation: `Founded on the belief that great innovation comes from hands-on learning, we convert theoretical concepts into real systems.`,
     differentiator: {
       question: "What makes us different?",
-      answer: `We are not just a competition team. We are a platform for aspiring engineers to innovate, learn and grow into industry leaders. Whether you are confident in your abilities or still discovering your path, SINGULARIT empowers you to become a capable professional in your field`,
+      answer: `We are not just a competition team. We are a platform for aspiring engineers to innovate, learn and grow into industry leaders.`,
     },
   },
 
   mission: {
     headline: "Our Mission",
-    statement: `Our mission is to develop autonomous aerial systems across multiple domains — from disaster response operations to high-speed autonomous racing — advancing the state of autonomous flight through both precision and agility.`,
+    statement: `Our mission is to prepare students for the growing demands of the technology industry.`,
     bridge: `We bridge the gap between classroom learning and industry-ready application by providing hands-on experience in:`,
     focusAreas: [
       {
@@ -87,7 +87,7 @@ export const siteConfig = {
   },
 
   contact: {
-    email: "SINGULARIT@cusat.ac.in",
+    email: "officialsingularit@gmail.com",
     location: "School of Engineering, CUSAT, Kochi, Kerala, India",
   },
 
@@ -99,17 +99,17 @@ export const siteConfig = {
     },
     {
       platform: "LinkedIn",
-      url: "https://linkedin.com/in/SINGULARIT",
+      url: "https://www.linkedin.com/company/teamsingularit",
       icon: "linkedin",
     },
     {
       platform: "GitHub",
-      url: "https://github.com/SINGULARIT-cusat",
+      url: "https://github.com/singularit-drone-wing",
       icon: "github",
     },
     {
       platform: "YouTube",
-      url: "https://youtube.com/@SINGULARIT",
+      url: "https://www.youtube.com/@SingularIT-y8k",
       icon: "youtube",
     },
   ],

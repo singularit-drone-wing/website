@@ -79,12 +79,6 @@ export default function About() {
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
         >
-          <p className="text-sm font-label text-[var(--sit-blue)] tracking-[0.2em] mb-4 uppercase">
-            // SYS.INFO: Current_Focus
-          </p>
-          <p className="text-base md:text-lg leading-relaxed text-[var(--sit-text-muted)] font-mono border-l-2 border-[var(--sit-border)] pl-6">
-            {siteConfig.about.focus}
-          </p>
         </motion.div>
 
         {/* What makes us different? */}

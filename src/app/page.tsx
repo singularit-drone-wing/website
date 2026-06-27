@@ -7,7 +7,6 @@
 import { Hero } from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Mission from "@/components/sections/Mission";
-import Vision from "@/components/sections/Vision";
 import Competitions from "@/components/sections/Competitions";
 import Footer from "@/components/layout/Footer";
 
@@ -17,7 +16,6 @@ export default function HomePage() {
       <Hero />
       <About />
       <Mission />
-      <Vision />
       <Competitions />
       <Footer />
     </main>
